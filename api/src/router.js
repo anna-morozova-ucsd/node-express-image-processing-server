@@ -1,11 +1,12 @@
 const express = require('express');
 const Router = express.Router();
-const multer = require('multer')
 const router = Router()
+const multer = require('multer')
+
 
 
 function filename(request, file, callback) {
-    return callback(null, file.originalname)
+    return callback(null, file.originalname())
 }
 const storage = multer.diskStorage({
     destination: 'api/uploads/',
