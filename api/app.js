@@ -7,6 +7,7 @@ const router = require('./src/router')
 app.use('/', router)
 app.use(express.static(path.resolve(__dirname, 'uploads')));
 
+//represent the path to index.html
 const pathToIndex = path.resolve(__dirname, '../client/index.html')
 app.use('/*', (request,response) => {
     response.sendFile(pathToIndex)
@@ -14,6 +15,6 @@ app.use('/*', (request,response) => {
 
 module.exports = app;
 
-function filename(request, file, callback) {
-    callback(null, file.originalname)
-}
+// function filename(request, file, callback) {
+//     callback(null, file.originalname)
+// }
