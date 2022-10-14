@@ -3,8 +3,9 @@ const path = require('path');
 const app = express()
 const router = require('./src/router')
 
-
+//Wire up the router
 app.use('/', router)
+//Serve static files
 app.use(express.static(path.resolve(__dirname, 'uploads')));
 
 //represent the path to index.html
